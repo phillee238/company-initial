@@ -1,21 +1,15 @@
 ---
-info:
-  description: Training configuration repo
-  
 spring:
   application:
     name: company
-  
----
-spring:
-  profiles: cloud
-  
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: https://username:password@eureka-server-verificatory-bailey.cfapps.io/eureka
+  cloud:
+    config:
+      uri: ${vcap.services.config-server-uri.credentials.uri}
 
-  instance:
-    hostname: ${vcap.application.urls[0]}
-    nonSecurePort: 80
-    
+management:
+  security:
+    enabled: false
+
+security:
+ basic:
+   enabled: false  
