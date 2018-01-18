@@ -15,7 +15,7 @@ eureka:
     serviceUrl:
       defaultZone: https://username:password@eureka-server-verificatory-bailey.cfapps.io/eureka
 
-#  instance:
-#    hostname:
-#    nonSecurePort:
+  instance:
+    hostname: ${vcap.application.urls[0]}
+    nonSecurePort: 80
     
